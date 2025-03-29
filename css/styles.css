@@ -94,16 +94,15 @@ img {
   letter-spacing: 0.02em;
   position: relative;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  /* color: #404bbf; */
 }
 
 .menu-link-item:hover,
-.menu-link-item:focus {
+.menu-link-item:focus,
+.menu-link-item.current {
   color: #404bbf;
 }
 
-.menu-link-item:hover::after,
-.menu-link-item:focus::after {
+.menu-link-item::after {
   content: '';
   border-radius: 2px;
   width: 48px;
@@ -114,6 +113,14 @@ img {
   left: 0;
   bottom: -1px;
   height: 4px;
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-link-item:hover::after,
+.menu-link-item:focus::after,
+.menu-link-item.current::after {
+  opacity: 1;
 }
 
 .contact-links-list {
